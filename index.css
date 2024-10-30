@@ -1,7 +1,18 @@
-body{
+body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+#decryptedMessage {
+  margin: 20px 60px; 
+}
+
+#decryptedMessage::first-letter {
+  text-transform: capitalize;
+}
+
+#decryptedMessage::after {
+  content: ".";
+}
