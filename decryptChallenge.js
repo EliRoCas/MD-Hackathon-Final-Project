@@ -12,23 +12,22 @@ function findCharacter(encryptedMessage) {
     "`": "c",
     "¡": "d",
     ";": "f",
-    "!": "j", 
+    "!": "j",
     "-": "h",
     "/": "l",
     "^": "m",
-    "]": "n", 
-    "*": "p", 
-    "}": "q", 
+    "]": "n",
+    "*": "p",
+    "}": "q",
     $: "r",
     "{": "s",
     "=": "t",
     "#": "v",
     "¿": "y",
-   
-    _: "z",
+    "__": "z",
   };
 
-  encryptedMessage = encryptedMessage.replace(/\(\)/g, " ").replace(/\\/g, "i");;
+  encryptedMessage = encryptedMessage.replace(/\(\)/g, " ").replace(/__/g, "z");
 
   let partialDecryption = encryptedMessage
     .split("")
@@ -40,12 +39,11 @@ function findCharacter(encryptedMessage) {
 }
 
 const encryptedMessage =
-"^[()`~^*/?`[()^+`-~()#[$()/~()%\\[]()}+[()[{=~¿()=$?%?!?]¡~()¿()`¬^~()[{=~()?+^[]=?()^\\{()*~¡[$[{()¡[()?=[]`\\¬]()¿()[{;+[$_~()`~]=\\]+~"
+  "^[()`~^*/?`[()^+`-~()#[$()/~()%\\[]()}+[()[{=~¿()=$?%?!?]¡~()¿()`¬^~()[{=~()?+^[]=?()^\\{()*~¡[$[{()¡[()?=[]`\\¬]()¿()[{;+[$__~()`~]=\\]+~";
 const decryptedMessage = findCharacter(encryptedMessage);
-console.log(decryptedMessage);
+// console.log(decryptedMessage);
 
 function updateParagraph() {
   const paragraph = document.getElementById("decryptedMessage");
   paragraph.textContent = decryptedMessage;
 }
-
