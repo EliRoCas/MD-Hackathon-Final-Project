@@ -28,7 +28,7 @@ function findCharacter(encryptedMessage) {
     _: "z",
   };
 
-  encryptedMessage = encryptedMessage.replace(/\(\)/g, " ").replace(/\\/g, "i");
+  encryptedMessage = encryptedMessage.replace(/\(\)/g, " ").replace(/\\/g, "i");;
 
   let partialDecryption = encryptedMessage
     .split("")
@@ -40,7 +40,7 @@ function findCharacter(encryptedMessage) {
 }
 
 const encryptedMessage =
-  "^[()`~^*/?`[()^+`-~()#[$()/~()%[]()}+[()[{=~¿()=$?%?!?]¡~()¿()`¬^~()[{=~()?+^[]=?()^{()*~¡[$[{()¡[()?=[]`¬]()¿()[{;+[$__~()`~]=]+~";
+"^[()`~^*/?`[()^+`-~()#[$()/~()%\\[]()}+[()[{=~¿()=$?%?!?]¡~()¿()`¬^~()[{=~()?+^[]=?()^\\{()*~¡[$[{()¡[()?=[]`\\¬]()¿()[{;+[$_~()`~]=\\]+~"
 const decryptedMessage = findCharacter(encryptedMessage);
 console.log(decryptedMessage);
 
